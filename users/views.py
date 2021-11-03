@@ -27,7 +27,7 @@ def update_list(request):
                 firebase_user.save()
 
             else:
-                UserModel.objects.filter(uid=user.uid).update(
+                UserModel.objects.filter(uid=user.uid).categories_update(
                     email=user.email, name=username, verified=user.email_verified, disabled=user.disabled,
                     user_image=user_image,
                     create_at=datetime.fromtimestamp(user.user_metadata.creation_timestamp / 1000),
@@ -42,8 +42,8 @@ def update_list(request):
 
 def delete_user(obj):
     auth.delete_user(obj.uid)
-    instance = UserModel.objects.get(id=obj.id)
-    instance.delete()
+    instance = UserModel.objects.get(id=obj.uuid)
+    instance.category_delete()
 
 
 def create_user(obj):
@@ -96,7 +96,7 @@ def update_user_info(obj):
     username = "" if not obj.name else obj.name
     user_image = "" if not obj.user_image else obj.user_image
 
-    if UserModel.objects.filter(id=obj.id).exists():
+    if UserModel.objects.filter(id=obj.uuid).exists():
 
         if user_image:
             user = auth.update_user(
@@ -105,7 +105,7 @@ def update_user_info(obj):
             )
             last_sign_in = user.user_metadata.last_sign_in_timestamp
 
-            UserModel.objects.filter(uid=obj.uid).update(
+            UserModel.objects.filter(uid=obj.uid).categories_update(
                 name=username, email=email, verified=obj.verified, gender=obj.gender,
                 user_image=user_image, disabled=obj.disabled, create_location=obj.create_location,
                 current_location=obj.current_location, coins=obj.coins,
@@ -120,7 +120,7 @@ def update_user_info(obj):
 
         last_sign_in = user.user_metadata.last_sign_in_timestamp
 
-        UserModel.objects.filter(uid=obj.uid).update(
+        UserModel.objects.filter(uid=obj.uid).categories_update(
             name=username, email=email, verified=obj.verified, disabled=obj.disabled, gender=obj.gender,
             create_location=obj.create_location, current_location=obj.current_location, coins=obj.coins,
             last_sign_in=datetime.min if not last_sign_in else datetime.utcfromtimestamp(last_sign_in / 1000),

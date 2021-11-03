@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ao)$cl^umiu_=-2m@1e#1o*&rgamwkis-&%id=iv!5@l&_572#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "ecombackendproject.herokuapp.com",
@@ -158,7 +158,13 @@ MEDIA_URL = '/django/'
 
 # Firebase Admin Setup
 cred = credentials.Certificate('ecommerce-1ad33-firebase-adminsdk.json')
-firebase_admin.initialize_app(cred)
+firebase_admin.initialize_app(
+    cred, {
+        'databaseURL': 'https://ecommerce-1ad33-default-rtdb.firebaseio.com',
+        'storageBucket': 'ecommerce-1ad33.appspot.com',
+        'projectId': 'ecommerce-1ad33',
+    }
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
