@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-ao)$cl^umiu_=-2m@1e#1o*&rgamwkis-&%id=iv!5@l&_572#
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "finalyearprojects.herokuapp.com",
+    "ecombackendproject.herokuapp.com",
     "localhost",
 ]
 
