@@ -1,0 +1,201 @@
+{% extends 'admin/base.html' %}
+
+{% block extrahead %}{{ block.super }}
+    <style>
+
+        {#Header Start#}
+
+        {# Logo CSS #}
+        .admin-interface #branding h1 .logo.default {
+            margin-right: 0;
+            width: 150px;
+        }
+
+
+        {#Header#}
+        .admin-interface #user-tools {
+            margin-top: 20px;
+        }
+
+        .admin-interface #header + #main {
+            border-top: 10px solid #2B2B2B;
+        }
+
+        {#Header End#}
+
+        {#Text Start#}
+
+        {#Text Box Started#}
+        .colM .aligned .vLargeTextField, .vXMLLargeTextField {
+            color: whitesmoke;
+        }
+
+        .vLargeTextField, .vXMLLargeTextField {
+            color: whitesmoke;
+        }
+
+        {#Text Box Ended#}
+
+        .aligned label {
+            color: white;
+        }
+
+        ul > li {
+            color: white;
+        }
+
+        p {
+            color: white;
+        }
+
+        .admin-interface #changelist .actions .action-counter {
+            color: white;
+        }
+
+        .admin-interface #changelist .actions .button {
+            color: white;
+        }
+
+        #changelist .actions select {
+            color: white;
+        }
+
+        #changelist .actions label {
+            color: white;
+        }
+
+        .aligned label + div.readonly {
+            color: seashell;
+        }
+
+        .admin-interface a:link, .admin-interface a:visited h2 h3 {
+            color: lightskyblue;
+        }
+
+        .admin-interface a:link, .admin-interface a:visited {
+            color: lightskyblue;
+        }
+
+        .dashboard .module table td a {
+            color: wheat;
+        }
+
+        h2 {
+            color: whitesmoke;
+        }
+
+        .nowrap {
+            color: white;
+        }
+
+        .wide label {
+            color: aliceblue;
+        }
+
+        .aligned .form-row input {
+            color: antiquewhite;
+        }
+
+        .admin-interface form .form-row p.file-upload .clearable-file-input label {
+            color: antiquewhite;
+        }
+
+        .admin-interface.change-form select {
+            color: antiquewhite;
+        }
+
+        .admin-interface a:link, .admin-interface a:visited h2 h3 {
+            color: lightskyblue;
+        }
+
+        form .aligned p.help:last-child, form .aligned div.help:last-child {
+            color: seashell;
+        }
+
+        form .aligned p.help:last-child, form .aligned div.help:last-child {
+            color: white;
+        }
+
+        #changelist-filter h3 {
+            color: yellowgreen;
+        }
+
+        .admin-interface .module.filtered #changelist-filter li.selected a, .admin-interface .module.filtered #changelist-filter li.selected a:link {
+            color: whitesmoke;
+        }
+
+        #changelist-filter a {
+            color: seashell;
+        }
+
+        .admin-interface #changelist #changelist-search input[type="submit"] {
+            color: white;
+        }
+
+        .admin-interface #changelist .paginator {
+            color: white;
+        }
+
+        .admin-interface thead th a, .admin-interface thead th a:link {
+            color: wheat;
+        }
+
+        #content-related .module h2 {
+            color: white;
+        }
+
+        td {
+            color: white;
+        }
+
+        .form-row {
+            color: white;
+        }
+
+        .admin-interface #changelist #changelist-search #searchbar {
+            color: white;
+        }
+
+        .form-row input {
+            color: white;
+        }
+
+        {#Text End#}
+
+        {#Container Start#}
+
+        .admin-interface div.breadcrumbs {
+            background: cadetblue;
+        }
+
+        .dashboard #content {
+            width: 900px;
+        }
+
+        {#Container End#}
+
+        .admin-interface #nav-sidebar .current-model {
+            background: dimgray;
+        }
+
+        :root .admin-interface {
+            --body-bg: #252525;
+            --darkened-bg: #222831;
+        }
+
+        .admin-interface #header {
+            background: #000000;
+        }
+
+        .admin-interface .module h2, .admin-interface .module caption, .admin-interface .module.filtered h2 {
+            background: #000000;
+        }
+
+        h1 {
+            font-weight: bolder;
+            color: wheat;
+            font-size: 24px;
+        }
+
+    </style>
+{% endblock %}

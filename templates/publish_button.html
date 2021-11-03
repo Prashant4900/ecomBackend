@@ -1,0 +1,15 @@
+{% extends 'admin/change_form.html' %}
+
+{% block field_sets %}
+    <div class="submit-row">
+        <input type="submit" value="Publish" name="_publish" class="default" style="background:#3F0071;">
+    </div>
+    {{ block.super }}
+{% endblock %}
+
+{% block submit_buttons_bottom %}
+    <div class="submit-row">
+        <input type="submit" value="Publish" name="_publish" class="default" style="background:#3F0071;">
+    </div>
+    {{ block.super }}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'admin/base.html' %}
+
+{% block extrahead %}{{ block.super }}
+
+    {% include 'src/login.html' %}
+
+    {% include 'src/logout.html' %}
+
+    {% include 'src/base.html' %}
+
+    {% include 'src/text.html' %}
+
+{% endblock %}
