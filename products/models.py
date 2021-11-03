@@ -15,6 +15,8 @@ class CategoryModel(models.Model):
 
     class Meta:
         db_table = 'categories'
+        verbose_name = 'Categories'
+        verbose_name_plural = 'Categories'
 
 
 class ProductsModel(models.Model):
@@ -38,6 +40,8 @@ class ProductsModel(models.Model):
 
     class Meta:
         db_table = 'products'
+        verbose_name = 'Products'
+        verbose_name_plural = 'Products'
 
     @property
     def image_preview(self):
